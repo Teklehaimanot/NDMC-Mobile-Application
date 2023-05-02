@@ -1,6 +1,7 @@
 import{createDrawerNavigator} from '@react-navigation/drawer'
 import Home from '../screens/home/Home';
-import { View,Text } from 'react-native';
+import { View,Text ,Dimensions} from 'react-native';
+import { color } from '../utilities/Colors';
 
 
   function EvidenceBrief({navigation, route}) {
@@ -27,11 +28,26 @@ import { View,Text } from 'react-native';
     );
   }
 
-
+const { width } = Dimensions.get("window");
 const Drawer = createDrawerNavigator();
-const DrawerNavigator = ()=>{
+const DrawerNavigator = (props)=>{
     return(
-    <Drawer.Navigator initialRouteName="NDMC">
+    <Drawer.Navigator initialRouteName="NDMC"
+     screenOptions={{
+      drawerStyle: {
+        headerShown: false,
+        backgroundColor: '#fff',
+        width: width*4/5,
+      },
+      headerStyle: {
+        backgroundColor: color.primary, //Set Header color
+      },
+      headerTintColor: color.white, //Set Header text color
+      headerTitleStyle: {
+        fontWeight: 'bold', //Set Header text style
+      },
+    }}
+    >
       <Drawer.Screen
         name="NDMC"
         component={Home}
