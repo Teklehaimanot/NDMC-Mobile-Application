@@ -30,12 +30,12 @@ const CustomSidebarMenu = (props) => {
         <DrawerItemList {...props} />
         <DrawerItem
           label="Visit Us"
-          onPress={() => Linking.openURL('https://aboutreact.com/')}
+          onPress={() => Linking.openURL('https://ndmc.ephi.gov.et')}
         />
         <View style={styles.customItem}>
           <Text
             onPress={() => {
-              Linking.openURL('https://aboutreact.com/');
+              Linking.openURL('https://vizhub.ephi.gov.et/');
             }}>
             Rate Us
           </Text>
@@ -45,14 +45,7 @@ const CustomSidebarMenu = (props) => {
           />
         </View>
       </DrawerContentScrollView>
-      <Text
-        style={{
-          fontSize: 16,
-          textAlign: 'center',
-          color: 'grey'
-        }}>
-        www.aboutreact.com
-      </Text>
+
     </SafeAreaView>
   );
 };
