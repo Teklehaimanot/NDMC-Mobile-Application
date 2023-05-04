@@ -2,7 +2,7 @@ import{createDrawerNavigator} from '@react-navigation/drawer'
 import Home from '../screens/home/Home';
 import { View,Text ,Dimensions} from 'react-native';
 import { color } from '../utilities/Colors';
-
+import CustomSidebarMenu from '../components/DrawerContent';
 
   function EvidenceBrief({navigation, route}) {
     return (
@@ -33,20 +33,19 @@ const Drawer = createDrawerNavigator();
 const DrawerNavigator = (props)=>{
     return(
     <Drawer.Navigator initialRouteName="NDMC"
-     screenOptions={{
-      drawerStyle: {
-        headerShown: false,
-        backgroundColor: '#fff',
-        width: width*4/5,
+    
+    screenOptions={{
+      activeTintColor: '#e91e63',
+      itemStyle: {marginVertical: 5},
+      headerStyle:{
+        backgroundColor:color.primary
       },
-      headerStyle: {
-        backgroundColor: color.primary, //Set Header color
-      },
-      headerTintColor: color.white, //Set Header text color
-      headerTitleStyle: {
-        fontWeight: 'bold', //Set Header text style
-      },
+      headerTintColor:color.white,
+      headerTitleStyle:{
+        fontWeight:'bold'
+      }
     }}
+    drawerContent={props => <CustomSidebarMenu {...props} />}
     >
       <Drawer.Screen
         name="NDMC"
