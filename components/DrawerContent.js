@@ -32,6 +32,7 @@ const CustomSidebarMenu = (props) => {
      
       <DrawerContentScrollView {...props} >
         <DrawerItemList {...props}  />
+        <View  style={{borderBottomColor: color.blueGray,borderBottomWidth: StyleSheet.hairlineWidth,marginTop:30}}></View>
         <DrawerItem
           label="Visit Us"
           onPress={() => Linking.openURL('https://ndmc.ephi.gov.et')}
@@ -61,7 +62,7 @@ const styles = StyleSheet.create({
     height: 100,
     borderRadius: 100 / 2,
     alignSelf: 'center',
-    backgroundColor:color.gray,
+    backgroundColor:color.cameraBackground,
     margin:20
   },
   iconStyle: {

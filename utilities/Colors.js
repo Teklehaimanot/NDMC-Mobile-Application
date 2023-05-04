@@ -13,6 +13,7 @@ export const color = {
     blueOcean: "#523CAD",
     border: "#e6e1e1",
     blueGray: "#2E3A59",
+    greenGray:'#5E716A',
     filterIcon: "#606060",
     likeButton: "#F56F6F",
     chatButton: "#FF5100",

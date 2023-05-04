@@ -11,10 +11,12 @@ const Drawer = createDrawerNavigator();
 const DrawerNavigator = (props)=>{
     return(
     <Drawer.Navigator initialRouteName="NDMC"
-    
     screenOptions={{
-      activeTintColor: '#e91e63',
-      itemStyle: {marginVertical: 5},
+      drawerActiveTintColor: color.white,
+      drawerActiveBackgroundColor:color.greenGray,
+      drawerItemStyle: {marginVertical: 5},
+      drawerLabelStyle:{fontWeight:'bold',fontSize:15},
+      
       headerStyle:{
         backgroundColor:color.primary
       },
