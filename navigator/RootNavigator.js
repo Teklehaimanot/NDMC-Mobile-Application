@@ -1,12 +1,12 @@
-import { NavigationContainer } from '@react-navigation/native';
-import DrawerNavigator from './DrawerNavigator';
+import { NavigationContainer } from "@react-navigation/native";
+import DrawerNavigator from "./DrawerNavigator";
 
-const RootNavigator =()=>{
-    return(
+const RootNavigator = () => {
+  return (
     <NavigationContainer>
-      <DrawerNavigator/>
+      <DrawerNavigator />
     </NavigationContainer>
-    )
-}
+  );
+};
 
-export default RootNavigator
+export default RootNavigator;

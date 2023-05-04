@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   SafeAreaView,
   View,
@@ -6,64 +6,76 @@ import {
   Image,
   Text,
   Linking,
-} from 'react-native';
+} from "react-native";
 
 import {
   DrawerContentScrollView,
   DrawerItemList,
   DrawerItem,
-} from '@react-navigation/drawer';
-import {color} from '../utilities/Colors'
+} from "@react-navigation/drawer";
+import { color } from "../utilities/Colors";
 
 const CustomSidebarMenu = (props) => {
   const BASE_PATH =
-    'https://raw.githubusercontent.com/AboutReact/sampleresource/master/';
-  const proileImage = 'react_logo.png';
+    "https://raw.githubusercontent.com/AboutReact/sampleresource/master/";
+  const proileImage = "react_logo.png";
 
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor:color.gray}}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: color.gray }}>
       {/*Top Large Image */}
-      <View style={{backgroundColor:color.primary, paddingBottom:30, borderBottomEndRadius:10}}> 
-      <Image
-        source={{uri: BASE_PATH + proileImage}}
-        style={styles.sideMenuProfileIcon}
-      />
+      <View
+        style={{
+          backgroundColor: color.primary,
+          paddingBottom: 30,
+          borderBottomEndRadius: 10,
+        }}
+      >
+        <Image
+          source={{ uri: BASE_PATH + proileImage }}
+          style={styles.sideMenuProfileIcon}
+        />
       </View>
-     
-      <DrawerContentScrollView {...props} >
-        <DrawerItemList {...props}  />
-        <View  style={{borderBottomColor: color.blueGray,borderBottomWidth: StyleSheet.hairlineWidth,marginTop:30}}></View>
+
+      <DrawerContentScrollView {...props}>
+        <DrawerItemList {...props} />
+        <View
+          style={{
+            borderBottomColor: color.blueGray,
+            borderBottomWidth: StyleSheet.hairlineWidth,
+            marginTop: 30,
+          }}
+        ></View>
         <DrawerItem
           label="Visit Us"
-          onPress={() => Linking.openURL('https://ndmc.ephi.gov.et')}
+          onPress={() => Linking.openURL("https://ndmc.ephi.gov.et")}
         />
         <View style={styles.customItem}>
           <Text
             onPress={() => {
-              Linking.openURL('https://vizhub.ephi.gov.et/');
-            }}>
+              Linking.openURL("https://vizhub.ephi.gov.et/");
+            }}
+          >
             Rate Us
           </Text>
           <Image
-            source={{uri: BASE_PATH + 'star_filled.png'}}
+            source={{ uri: BASE_PATH + "star_filled.png" }}
             style={styles.iconStyle}
           />
         </View>
       </DrawerContentScrollView>
-
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   sideMenuProfileIcon: {
-    resizeMode: 'center',
+    resizeMode: "center",
     width: 100,
     height: 100,
     borderRadius: 100 / 2,
-    alignSelf: 'center',
-    backgroundColor:color.cameraBackground,
-    margin:20
+    alignSelf: "center",
+    backgroundColor: color.cameraBackground,
+    margin: 20,
   },
   iconStyle: {
     width: 15,
@@ -72,8 +84,8 @@ const styles = StyleSheet.create({
   },
   customItem: {
     padding: 16,
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
   },
 });
 
