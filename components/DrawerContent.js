@@ -13,6 +13,7 @@ import {
   DrawerItemList,
   DrawerItem,
 } from '@react-navigation/drawer';
+import {color} from '../utilities/Colors'
 
 const CustomSidebarMenu = (props) => {
   const BASE_PATH =
@@ -20,14 +21,17 @@ const CustomSidebarMenu = (props) => {
   const proileImage = 'react_logo.png';
 
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView style={{flex: 1, backgroundColor:color.gray}}>
       {/*Top Large Image */}
+      <View style={{backgroundColor:color.primary, paddingBottom:30, borderBottomEndRadius:10}}> 
       <Image
         source={{uri: BASE_PATH + proileImage}}
         style={styles.sideMenuProfileIcon}
       />
-      <DrawerContentScrollView {...props}>
-        <DrawerItemList {...props} />
+      </View>
+     
+      <DrawerContentScrollView {...props} >
+        <DrawerItemList {...props}  />
         <DrawerItem
           label="Visit Us"
           onPress={() => Linking.openURL('https://ndmc.ephi.gov.et')}
@@ -57,6 +61,8 @@ const styles = StyleSheet.create({
     height: 100,
     borderRadius: 100 / 2,
     alignSelf: 'center',
+    backgroundColor:color.gray,
+    margin:20
   },
   iconStyle: {
     width: 15,
