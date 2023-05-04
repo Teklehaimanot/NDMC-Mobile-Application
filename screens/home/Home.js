@@ -25,37 +25,6 @@ const Home = ({ navigation }) => {
             <Image style={styles.image} source={news.image} />
           </View>
         ))}
-
-        {/* <View style={styles.cardview}>
-          <Text
-            style={{
-              marginHorizontal: 15,
-              marginTop: 15,
-              color: color.blueGray,
-            }}
-          >
-            NDMC HOSTS IN-HOUSE SCIENTIFIC SESSION
-          </Text>
-          <Image
-            style={styles.image}
-            source={require("../../assets/news1.jpg")}
-          />
-        </View>
-        <View style={styles.cardview}>
-          <Text
-            style={{
-              marginHorizontal: 15,
-              marginTop: 15,
-              color: color.blueGray,
-            }}
-          >
-            NDMC HOSTS IN-HOUSE SCIENTIFIC SESSION
-          </Text>
-          <Image
-            style={styles.image}
-            source={require("../../assets/news1.jpg")}
-          />
-        </View> */}
       </ScrollView>
     </View>
   );
@@ -74,7 +43,7 @@ const styles = StyleSheet.create({
     width: width * 1,
     borderColor: color.blueGray,
     borderWidth: 0.2,
-    marginTop: 15,
+    marginTop: 10,
   },
   image: {
     width: width * 1,
