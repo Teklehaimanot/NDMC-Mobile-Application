@@ -4,6 +4,7 @@ export const color = {
   black: "#000000",
   gray: "#EEEEEE",
   grayLight: "#A1A6B3",
+  grayDark: "#a9a9a9",
   grayBackground: "#E5E5E5",
   splashTextColor: "#3C3A36",
   error: "red",
