@@ -1,4 +1,11 @@
-import { StyleSheet, View, Text, Image, Dimensions } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Text,
+  Image,
+  Dimensions,
+  TouchableOpacity,
+} from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { color } from "../../utilities/Colors";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -12,18 +19,30 @@ const Home = ({ navigation }) => {
     <View style={styles.container}>
       <ScrollView style={styles.cardList}>
         {mynews.map((news) => (
-          <View key={news.id} style={styles.cardview}>
-            <Text
-              style={{
-                marginHorizontal: 15,
-                marginTop: 15,
-                color: color.blueGray,
-              }}
-            >
-              {news.title}
-            </Text>
-            <Image style={styles.image} source={news.image} />
-          </View>
+          <TouchableOpacity
+            key={news.id}
+            onPress={() =>
+              navigation.navigate("details", {
+                title: news.title,
+                image: news.image,
+                description: news.discreption,
+                date: news.date,
+              })
+            }
+          >
+            <View style={styles.cardview}>
+              <Text
+                style={{
+                  marginHorizontal: 15,
+                  marginTop: 15,
+                  color: color.blueGray,
+                }}
+              >
+                {news.title}
+              </Text>
+              <Image style={styles.image} source={news.image} />
+            </View>
+          </TouchableOpacity>
         ))}
       </ScrollView>
     </View>
@@ -49,7 +68,6 @@ const styles = StyleSheet.create({
     width: width * 1,
     height: 200,
     marginVertical: width * 0.08,
-    // borderRadius: 10,
   },
 });
 
