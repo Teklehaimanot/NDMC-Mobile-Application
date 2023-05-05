@@ -19,4 +19,5 @@ export const color = {
   likeButton: "#F56F6F",
   chatButton: "#FF5100",
   chatButtonIcon: "#F2A03F",
+  hoveringBackground: "#7EB7E3",
 };

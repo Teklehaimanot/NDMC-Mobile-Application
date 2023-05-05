@@ -13,7 +13,7 @@ const DrawerNavigator = (props) => {
       initialRouteName="NDMC"
       screenOptions={{
         drawerActiveTintColor: color.white,
-        drawerActiveBackgroundColor: color.greenGray,
+        drawerActiveBackgroundColor: color.hoveringBackground,
         drawerItemStyle: { marginVertical: 5 },
         drawerLabelStyle: { fontWeight: "bold", fontSize: 15 },
 
