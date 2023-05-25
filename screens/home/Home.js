@@ -11,10 +11,12 @@ import { color } from "../../utilities/Colors";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { news } from "../../data/news";
 import { useState } from "react";
+import { getDatabase, ref, child, get } from "firebase/database";
 
 const { width } = Dimensions.get("window");
 const Home = ({ navigation }) => {
   const [mynews, setNews] = useState(news);
+
   return (
     <View style={styles.container}>
       <ScrollView style={styles.cardList}>
