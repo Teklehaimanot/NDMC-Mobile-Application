@@ -12,6 +12,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { useEffect, useState } from "react";
 import { firebase } from "../../services/firebase.config";
 import { getDatabase, onValue, ref } from "firebase/database";
+import { REACT_APP_API_KEY } from "@env";
 
 const { width } = Dimensions.get("window");
 const Home = ({ navigation }) => {
@@ -36,9 +37,6 @@ const Home = ({ navigation }) => {
       }
     });
   }, []);
-
-  console.log("..new", mynews[0]);
-  // const imgname = "../../assets/" + "news1" + ".jpg";
 
   return (
     <View style={styles.container}>
