@@ -31,13 +31,14 @@ const Home = ({ navigation }) => {
           obj.push({ ...value, id: key });
           obj[key] = value;
         }
-        // console.log("obj", obj);
+
         setNews(obj);
       }
     });
   }, []);
 
-  // console.log("..new", mynews[0]);
+  console.log("..new", mynews[0]);
+  // const imgname = "../../assets/" + "news1" + ".jpg";
 
   return (
     <View style={styles.container}>
@@ -48,7 +49,7 @@ const Home = ({ navigation }) => {
             onPress={() =>
               navigation.navigate("details", {
                 title: news.title,
-                // image: news.image,
+                image: news.image,
                 description: news.description,
                 date: news.date,
               })

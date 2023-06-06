@@ -7,12 +7,11 @@ const Stack = createNativeStackNavigator();
 const EvidenceBriefNavigator = () => {
   return (
     <Stack.Navigator
-      initialRouteName="FirstPage"
+      initialRouteName="EvidencBrief"
       screenOptions={{ headerShown: false }}
     >
-      <Stack.Screen name="FirstPage" component={EvidenceBrief} />
+      <Stack.Screen name="EvidenceBrief" component={EvidenceBrief} />
     </Stack.Navigator>
   );
 };
-
 export default EvidenceBriefNavigator;
