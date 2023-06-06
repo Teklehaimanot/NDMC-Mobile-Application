@@ -1,16 +1,7 @@
 import * as React from "react";
 import { Button, View, Text, SafeAreaView } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
-function EvidenceBrief({ navigation, route }) {
-  return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Text>Evidence Briefs</Text>
-      </View>
-    </SafeAreaView>
-  );
-}
+import EvidenceBrief from "../screens/evidenceBrief/EvidenceBrief";
 
 const Stack = createNativeStackNavigator();
 const EvidenceBriefNavigator = () => {
