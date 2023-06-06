@@ -9,13 +9,35 @@ import {
 import { ScrollView } from "react-native-gesture-handler";
 import { color } from "../../utilities/Colors";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { news } from "../../data/news";
-import { useState } from "react";
-import { getDatabase, ref, child, get } from "firebase/database";
+import { useEffect, useState } from "react";
+import { firebase } from "../../services/firebase.config";
+import { getDatabase, onValue, ref } from "firebase/database";
 
 const { width } = Dimensions.get("window");
 const Home = ({ navigation }) => {
-  const [mynews, setNews] = useState(news);
+  const [mynews, setNews] = useState([]);
+
+  useEffect(() => {
+    const db = getDatabase();
+    onValue(ref(db, "news"), (snapshot) => {
+      const data = snapshot.val();
+      if (data !== null) {
+        const result = Object.keys(data).map((key) => [key, data[key]]);
+        const obj = [];
+
+        for (let i = 0; i < result.length; i++) {
+          let key = result[i][0];
+          let value = result[i][1];
+          obj.push({ ...value, id: key });
+          obj[key] = value;
+        }
+        // console.log("obj", obj);
+        setNews(obj);
+      }
+    });
+  }, []);
+
+  // console.log("..new", mynews[0]);
 
   return (
     <View style={styles.container}>
@@ -26,8 +48,8 @@ const Home = ({ navigation }) => {
             onPress={() =>
               navigation.navigate("details", {
                 title: news.title,
-                image: news.image,
-                description: news.discreption,
+                // image: news.image,
+                description: news.description,
                 date: news.date,
               })
             }
@@ -42,7 +64,10 @@ const Home = ({ navigation }) => {
               >
                 {news.title}
               </Text>
-              <Image style={styles.image} source={news.image} />
+              <Image
+                style={styles.image}
+                source={require("../../assets/news1.jpg")}
+              />
             </View>
           </TouchableOpacity>
         ))}
