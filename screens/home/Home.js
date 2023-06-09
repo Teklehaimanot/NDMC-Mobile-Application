@@ -8,18 +8,16 @@ import {
 } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { color } from "../../utilities/Colors";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { useEffect, useState } from "react";
-import { firebase } from "../../services/firebase.config";
-import { getDatabase, onValue, ref } from "firebase/database";
-import { REACT_APP_API_KEY } from "@env";
+import { database } from "../../services/firebase.config";
+import { onValue, ref } from "firebase/database";
 
 const { width } = Dimensions.get("window");
 const Home = ({ navigation }) => {
   const [mynews, setNews] = useState([]);
 
   useEffect(() => {
-    const db = getDatabase();
+    const db = database;
     onValue(ref(db, "news"), (snapshot) => {
       const data = snapshot.val();
       if (data !== null) {
@@ -32,12 +30,10 @@ const Home = ({ navigation }) => {
           obj.push({ ...value, id: key });
           obj[key] = value;
         }
-
         setNews(obj);
       }
     });
   }, []);
-
   return (
     <View style={styles.container}>
       <ScrollView style={styles.cardList}>
