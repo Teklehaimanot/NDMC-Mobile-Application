@@ -1,11 +1,4 @@
-import {
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  Dimensions,
-} from "react-native";
+import { StyleSheet, Text, View, Image, Dimensions } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { color } from "../utilities/Colors";
 
@@ -39,7 +32,7 @@ const Post = ({ route }) => {
         >
           {description}
         </Text>
-        <Image style={styles.image} source={image} />
+        <Image style={styles.image} source={{ uri: image }} />
         <Text style={{ margin: 10 }}>Date: {date}</Text>
       </ScrollView>
     </View>
