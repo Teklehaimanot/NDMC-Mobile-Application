@@ -59,35 +59,6 @@ const EvidenceDetail = ({ route }) => {
     }
   };
 
-  // const handleDownload = () => {
-  //   const stors = storage;
-  //   const starsRef = ref(stors, "fileAttached/AMR EB- .pdf");
-  //   getDownloadURL(starsRef)
-  //     .then((url) => {
-  //       const xhr = new XMLHttpRequest();
-  //       xhr.responseType = "blob";
-  //       xhr.onload = (event) => {
-  //         const blob = xhr.response;
-  //         console.log(blob);
-  //       };
-  //       xhr.open("GET", url);
-  //       xhr.send();
-  //       // alert(url);
-  //       // console.log(url);
-  //     })
-  //     .catch((error) => {
-  //       switch (error.code) {
-  //         case "storage/object-not-found":
-  //           break;
-  //         case "storage/unauthorized":
-  //           break;
-  //         case "storage/canceled":
-  //           break;
-  //         case "storage/unknown":
-  //           break;
-  //       }
-  //     });
-  // };
   return (
     <View style={styles.container}>
       <ScrollView>
