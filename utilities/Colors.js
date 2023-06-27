@@ -21,4 +21,5 @@ export const color = {
   chatButton: "#FF5100",
   chatButtonIcon: "#F2A03F",
   hoveringBackground: "#7EB7E3",
+  keyllyGreen: "#B1D8B7",
 };

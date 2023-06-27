@@ -58,9 +58,8 @@ const EvidenceBrief = ({ navigation }) => {
                   style={{
                     marginHorizontal: 15,
                     marginTop: 15,
-                    color: color.white,
-                    fontWeight: "bold",
-                    backgroundColor: color.greenGray,
+                    color: color.blueOcean,
+                    backgroundColor: color.keyllyGreen,
                     padding: 15,
                     borderRadius: 5,
                     lineHeight: 20,
