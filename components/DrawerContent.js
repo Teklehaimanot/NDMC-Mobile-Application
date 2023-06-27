@@ -22,7 +22,6 @@ const CustomSidebarMenu = (props) => {
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: color.gray }}>
-      {/*Top Large Image */}
       <View
         style={{
           backgroundColor: color.primary,

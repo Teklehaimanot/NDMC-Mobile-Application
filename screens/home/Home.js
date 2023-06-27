@@ -43,7 +43,6 @@ const Home = ({ navigation }) => {
     );
   }
 
-  console.log(mynews);
   return (
     <View style={styles.container}>
       <ScrollView style={styles.cardList}>
@@ -65,7 +64,7 @@ const Home = ({ navigation }) => {
                   style={{
                     marginHorizontal: 15,
                     marginTop: 15,
-                    color: color.blueGray,
+                    color: color.blueOcean,
                   }}
                 >
                   {news.title}

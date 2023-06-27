@@ -12,6 +12,7 @@ export const color = {
   imagePlaceholder: "#8C8C8C",
   cameraBackground: "#000021",
   blueOcean: "#523CAD",
+  blue: "#0000ff",
   border: "#e6e1e1",
   blueGray: "#2E3A59",
   greenGray: "#5E716A",

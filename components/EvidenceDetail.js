@@ -1,10 +1,17 @@
-import { StyleSheet, Text, View, Image, Dimensions } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  Dimensions,
+  Button,
+  Pressable,
+} from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { color } from "../utilities/Colors";
-import { Colors } from "react-native/Libraries/NewAppScreen";
 
 const { width } = Dimensions.get("window");
-const Post = ({ route }) => {
+const EvidenceDetail = ({ route }) => {
   const { title, image, description, date } = route.params;
   return (
     <View style={styles.container}>
@@ -35,12 +42,19 @@ const Post = ({ route }) => {
         </Text>
         <Image style={styles.image} source={{ uri: image }} />
         <Text style={{ margin: 10, color: color.blue }}>Date: {date}</Text>
+        <Pressable style={styles.button}>
+          <Text
+            style={{ color: color.white, fontWeight: "bold", letterSpacing: 3 }}
+          >
+            Download - PDF
+          </Text>
+        </Pressable>
       </ScrollView>
     </View>
   );
 };
 
-export default Post;
+export default EvidenceDetail;
 
 const styles = StyleSheet.create({
   container: {
@@ -48,6 +62,17 @@ const styles = StyleSheet.create({
   },
   image: {
     width: width * 1,
-    height: 460,
+    height: 300,
+  },
+  button: {
+    alignItems: "center",
+    justifyContent: "center",
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    borderRadius: 4,
+    elevation: 3,
+    backgroundColor: color.primary,
+    marginVertical: 15,
+    marginHorizontal: width * 0.03,
   },
 });

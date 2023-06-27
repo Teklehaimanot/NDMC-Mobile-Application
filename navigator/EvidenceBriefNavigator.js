@@ -1,7 +1,7 @@
 import * as React from "react";
-import { Button, View, Text, SafeAreaView } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import EvidenceBrief from "../screens/evidenceBrief/EvidenceBrief";
+import EvidenceDetail from "../components/EvidenceDetail";
 
 const Stack = createNativeStackNavigator();
 const EvidenceBriefNavigator = () => {
@@ -11,6 +11,7 @@ const EvidenceBriefNavigator = () => {
       screenOptions={{ headerShown: false }}
     >
       <Stack.Screen name="EvidenceBrief" component={EvidenceBrief} />
+      <Stack.Screen name="EvidenceDetails" component={EvidenceDetail} />
     </Stack.Navigator>
   );
 };
