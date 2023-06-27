@@ -1,7 +1,6 @@
 import { StyleSheet, Text, View, Image, Dimensions } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { color } from "../utilities/Colors";
-import { Colors } from "react-native/Libraries/NewAppScreen";
 
 const { width } = Dimensions.get("window");
 const Post = ({ route }) => {

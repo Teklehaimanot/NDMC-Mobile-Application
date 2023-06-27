@@ -17,7 +17,7 @@ const EvidenceBrief = ({ navigation }) => {
       title:
         "UNDER-FIVE MORTALITY ASSOCIATED WITH ANTIMICROBIAL-RESISTANT BACTERIA IN ETHIOPIA",
       imageUrl:
-        "https://firebasestorage.googleapis.com/v0/b/ndmc-mobile-5a8b5.appspot.com/o/news%2Fnews1.jpg?alt=media&token=2d30273b-050b-4f2e-9ddf-934d13f234ac",
+        "https://firebasestorage.googleapis.com/v0/b/ndmc-mobile-5a8b5.appspot.com/o/evidenceBrief%2FScreenshot%202023-06-27%20at%2012.39.49%20PM.png?alt=media&token=c8fbed1f-8321-4e00-997d-a56d9af21ae5",
       description:
         "The high child mortality burdens in resource-limited settings are attributable to various causes including infectious diseases, malnutrition, and congenital and birth defects. Resistance to broad-spectrum antimicrobials is probably the major cause of death from treatable bacterial infections after hospitalization in developing countries including Ethiopia. However, evidence are scarce on bacterial etiology contributing to under five deaths and their antimicrobial resistance (AMR) levels in Ethiopia. This study intends to address these evidence gaps using two novel causes of death studies conducted in Ethiopia: Child health and mortality prevention surveillance (CHAMPS) on 196 stillbirths and under-five deaths and Study of illness in preterm (SIP) on 1109 preterm deaths.",
       date: "June 10 2024",
@@ -63,6 +63,7 @@ const EvidenceBrief = ({ navigation }) => {
                     padding: 15,
                     borderRadius: 5,
                     lineHeight: 20,
+                    letterSpacing: 0.5,
                   }}
                 >
                   {news.title}
@@ -96,15 +97,17 @@ const styles = StyleSheet.create({
     borderColor: color.blueGray,
     borderWidth: 0.2,
     marginTop: 10,
-    borderBottomWidth: 2,
-    borderBottomColor: color.blueGray,
-    borderBottomEndRadius: 5,
+    borderBottomWidth: 1,
+    borderBottomColor: color.greenGray,
+    borderRadius: 5,
   },
   image: {
     width: width * 0.8,
-    height: 180,
+    height: width * 0.5,
     marginVertical: width * 0.08,
     marginHorizontal: width * 0.1,
+    borderRadius: 5,
+
     // marginHorizontal: 15,
   },
 });
