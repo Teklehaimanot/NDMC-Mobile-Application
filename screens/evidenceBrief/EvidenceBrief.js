@@ -60,7 +60,7 @@ const EvidenceBrief = ({ navigation }) => {
                     marginTop: 15,
                     color: color.white,
                     fontWeight: "bold",
-                    backgroundColor: color.primary,
+                    backgroundColor: color.greenGray,
                     padding: 15,
                     borderRadius: 5,
                     lineHeight: 20,
@@ -97,6 +97,9 @@ const styles = StyleSheet.create({
     borderColor: color.blueGray,
     borderWidth: 0.2,
     marginTop: 10,
+    borderBottomWidth: 2,
+    borderBottomColor: color.blueGray,
+    borderBottomEndRadius: 5,
   },
   image: {
     width: width * 0.8,

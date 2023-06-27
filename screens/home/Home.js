@@ -64,7 +64,13 @@ const Home = ({ navigation }) => {
                   style={{
                     marginHorizontal: 15,
                     marginTop: 15,
-                    color: color.blueOcean,
+                    color: color.greenGray,
+                    borderLeftWidth: 0.8,
+                    borderLeftColor: color.primary,
+                    paddingLeft: width * 0.05,
+                    borderRightWidth: 0.8,
+                    borderRightColor: color.primary,
+                    paddingRight: width * 0.05,
                   }}
                 >
                   {news.title}
