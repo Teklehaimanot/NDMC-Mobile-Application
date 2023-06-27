@@ -9,10 +9,33 @@ import {
 } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { color } from "../utilities/Colors";
+import { storage } from "../services/firebase.config";
+import { ref, getDownloadURL } from "firebase/storage";
 
 const { width } = Dimensions.get("window");
 const EvidenceDetail = ({ route }) => {
   const { title, image, description, date } = route.params;
+
+  const handleDownload = () => {
+    const stors = storage;
+    const starsRef = ref(stors, "fileAttached/AMR EB- .pdf");
+    getDownloadURL(starsRef)
+      .then((url) => {
+        alert(url);
+      })
+      .catch((error) => {
+        switch (error.code) {
+          case "storage/object-not-found":
+            break;
+          case "storage/unauthorized":
+            break;
+          case "storage/canceled":
+            break;
+          case "storage/unknown":
+            break;
+        }
+      });
+  };
   return (
     <View style={styles.container}>
       <ScrollView>
@@ -22,7 +45,7 @@ const EvidenceDetail = ({ route }) => {
             paddingHorizontal: 10,
             fontWeight: "bold",
             fontSize: 15,
-            lineHeight: 25,
+            lineHeight: 20,
             letterSpacing: 1,
             color: color.greenGray,
           }}
@@ -42,7 +65,7 @@ const EvidenceDetail = ({ route }) => {
         </Text>
         <Image style={styles.image} source={{ uri: image }} />
         <Text style={{ margin: 10, color: color.blue }}>Date: {date}</Text>
-        <Pressable style={styles.button}>
+        <Pressable style={styles.button} onPress={handleDownload}>
           <Text
             style={{ color: color.white, fontWeight: "bold", letterSpacing: 3 }}
           >

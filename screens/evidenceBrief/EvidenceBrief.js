@@ -5,43 +5,47 @@ import {
   Image,
   Dimensions,
   TouchableOpacity,
+  ActivityIndicator,
 } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
+import { database } from "../../services/firebase.config";
+import { onValue, ref as myref } from "firebase/database";
 import { color } from "../../utilities/Colors";
+import { useState, useEffect } from "react";
 
 const { width } = Dimensions.get("window");
 const EvidenceBrief = ({ navigation }) => {
-  const mynews = [
-    {
-      id: 1,
-      title:
-        "UNDER-FIVE MORTALITY ASSOCIATED WITH ANTIMICROBIAL-RESISTANT BACTERIA IN ETHIOPIA",
-      imageUrl:
-        "https://firebasestorage.googleapis.com/v0/b/ndmc-mobile-5a8b5.appspot.com/o/evidenceBrief%2FScreenshot%202023-06-27%20at%2012.39.49%20PM.png?alt=media&token=c8fbed1f-8321-4e00-997d-a56d9af21ae5",
-      description:
-        "The high child mortality burdens in resource-limited settings are attributable to various causes including infectious diseases, malnutrition, and congenital and birth defects. Resistance to broad-spectrum antimicrobials is probably the major cause of death from treatable bacterial infections after hospitalization in developing countries including Ethiopia. However, evidence are scarce on bacterial etiology contributing to under five deaths and their antimicrobial resistance (AMR) levels in Ethiopia. This study intends to address these evidence gaps using two novel causes of death studies conducted in Ethiopia: Child health and mortality prevention surveillance (CHAMPS) on 196 stillbirths and under-five deaths and Study of illness in preterm (SIP) on 1109 preterm deaths.",
-      date: "June 10 2024",
-    },
-    {
-      id: 2,
-      title: "tek",
-      image: "https://log.ephi.com",
-      description: "teklehaimanot",
-      date: "June 10 2024",
-    },
-    {
-      id: 3,
-      title: "tek",
-      image: "https://log.ephi.com",
-      description: "teklehaimanot",
-      date: "June 10 2024",
-    },
-  ];
+  const [evidences, setEvidences] = useState([]);
+  useEffect(() => {
+    const db = database;
+    onValue(myref(db, "evidenceBrief"), (snapshot) => {
+      const obj = [];
+      const data = snapshot.val();
+      if (data !== null) {
+        const result = Object.keys(data).map((key) => [key, data[key]]);
+        for (let i = 0; i < result.length; i++) {
+          let key = result[i][0];
+          let value = result[i][1];
+          obj.push({ ...value, id: key });
+          obj[key] = value;
+        }
+      }
+      setEvidences(obj);
+    });
+  }, []);
+
+  if (!evidences.length) {
+    return (
+      <View style={{ flex: 1, justifyContent: "center" }}>
+        <ActivityIndicator size="large" color={color.primary} />
+      </View>
+    );
+  }
   return (
     <View style={styles.container}>
       <ScrollView style={styles.cardList}>
-        {mynews &&
-          mynews.map((news) => (
+        {evidences &&
+          evidences.map((news) => (
             <TouchableOpacity
               key={news.id}
               onPress={() =>
