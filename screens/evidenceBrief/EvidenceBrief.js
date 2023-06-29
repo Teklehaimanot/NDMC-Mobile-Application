@@ -41,6 +41,7 @@ const EvidenceBrief = ({ navigation }) => {
       </View>
     );
   }
+
   return (
     <View style={styles.container}>
       <ScrollView style={styles.cardList}>
@@ -54,6 +55,8 @@ const EvidenceBrief = ({ navigation }) => {
                   image: news.imageUrl,
                   description: news.description,
                   date: news.date,
+                  attachedUrl: news.attachedUrl,
+                  filename: news.filename,
                 })
               }
             >

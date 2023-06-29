@@ -16,13 +16,14 @@ import { shareAsync } from "expo-sharing";
 
 const { width } = Dimensions.get("window");
 const EvidenceDetail = ({ route }) => {
-  const { title, image, description, date } = route.params;
+  const { title, image, description, date, attachedUrl, filename } =
+    route.params;
 
   handleDownload = async () => {
-    const filename = "teki.pdf";
+    const filename = filename;
     try {
       const result = await FileSystem.downloadAsync(
-        "https://firebasestorage.googleapis.com/v0/b/ndmc-mobile-5a8b5.appspot.com/o/fileAttached%2FAMR%20EB-%20.pdf?alt=media&token=ed760ab4-e6c2-41e3-8326-671ab8619dc9",
+        attachedUrl,
         FileSystem.documentDirectory + filename
       );
       console.log(result.uri);
