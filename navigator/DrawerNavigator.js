@@ -48,7 +48,7 @@ const DrawerNavigator = (props) => {
       <Drawer.Screen
         name="About Page"
         component={AboutScreenNavigator}
-        options={{ drawerLabel: "About", title: "About" }}
+        options={{ drawerLabel: "About", title: "About " }}
       />
     </Drawer.Navigator>
   );

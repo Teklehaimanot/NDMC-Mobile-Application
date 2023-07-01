@@ -1,10 +1,17 @@
-import { View, Text, StyleSheet, Dimensions } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Dimensions,
+  Pressable,
+  TouchableOpacity,
+} from "react-native";
 import { color } from "../../utilities/Colors";
 import { ScrollView } from "react-native-gesture-handler";
 
 const { width } = Dimensions.get("window");
 
-const AboutPage = () => {
+const AboutPage = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.cardView}>
@@ -48,6 +55,12 @@ const AboutPage = () => {
             evidence. That, on its part, has been an input to ensure evidence
             utilization for decision making by the Federal Ministry of Health
             (FMoH) and other relevant stakeholders at all levels.
+            <Text
+              onPress={() => navigation.navigate("aboutDetail")}
+              style={{ color: color.blue }}
+            >
+              View Details
+            </Text>
           </Text>
         </View>
         <View style={[styles.header, styles.boxShadow]}>
