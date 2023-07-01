@@ -9,8 +9,6 @@ import {
 } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { color } from "../utilities/Colors";
-import { storage } from "../services/firebase.config";
-import { ref, getDownloadURL } from "firebase/storage";
 import * as FileSystem from "expo-file-system";
 import { shareAsync } from "expo-sharing";
 
