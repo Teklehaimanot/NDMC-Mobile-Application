@@ -15,7 +15,58 @@ const AboutPage = () => {
           </Text>
         </View>
       </View>
-      <ScrollView style={styles.cardView}></ScrollView>
+      <ScrollView
+        style={[
+          styles.cardView,
+          { borderWidth: 0.4, padding: 10, marginVertical: 15 },
+        ]}
+      >
+        <View style={[styles.header, styles.boxShadow]}>
+          <Text
+            style={{
+              fontSize: 15,
+              color: color.greenGray,
+              marginBottom: 10,
+              fontWeight: "bold",
+              borderBottomWidth: 0.5,
+              textAlign: "center",
+              padding: 5,
+              letterSpacing: 2,
+            }}
+          >
+            DIRECTOR'S STATEMENT
+          </Text>
+          <Text
+            style={{ fontSize: 15, color: color.blueOcean, marginBottom: 10 }}
+          >
+            The National Data Management Center for Health (NDMC),
+          </Text>
+          <Text style={{ color: color.blueGray, lineHeight: 20 }}>
+            under theEthiopian Public Health Institute (EPHI), is responsible to
+            archive health related data. Distinctively, the center shoulders the
+            responsibility of processing and managing researches on community
+            health. Besides, the center is known to apply robust data analytic
+            techniques to apply synthesis evidence. That, on its part, has been
+            an input to ensure evidence utilization for decision making by the
+            Federal Ministry of Health (FMoH) and other relevant stakeholders at
+            all levels. NDMC has collaborative partnership with the Institute
+            for Health Metrics and Evaluation (IHME) at the University of
+            Washington, and has established a unit studying and documenting
+            burden of disease at a national level. The National Data Management
+            Center for Health (NDMC), under the Ethiopian Public Health
+            Institute (EPHI), is responsible to archive health related data.
+            Distinctively, the center shoulders the responsibility of processing
+            and managing researches on community health. Besides, the center is
+            known to apply robust data analytic techniques to apply synthesis
+            evidence. That, on its part, has been an input to ensure evidence
+            utilization for decision making by the Federal Ministry of Health
+            (FMoH) and other relevant stakeholders at all levels.
+          </Text>
+        </View>
+        <View style={[styles.header, styles.boxShadow]}>
+          <Text>teklej lklsdj jls jl lsjl jlksj aha ooi a hwf jajo ij</Text>
+        </View>
+      </ScrollView>
     </View>
   );
 };
@@ -25,7 +76,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   header: {
-    marginVertical: 12,
+    marginTop: 12,
     borderRadius: 5,
     padding: width * 0.05,
   },
@@ -51,5 +102,6 @@ const styles = StyleSheet.create({
     width: width * 0.98,
     marginLeft: 0.01 * width,
   },
+  scrollView: {},
 });
 export default AboutPage;
