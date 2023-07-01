@@ -7,40 +7,15 @@ const { width } = Dimensions.get("window");
 const AboutPage = () => {
   return (
     <View style={styles.container}>
-      <ScrollView
-        style={{
-          width: width * 0.98,
-          marginLeft: 0.01 * width,
-        }}
-      >
-        <View
-          style={{
-            marginVertical: 14,
-            borderWidth: 0.5,
-            borderRadius: 5,
-            padding: width * 0.05,
-            shadowColor: color.primary,
-            shadowOffset: { width: -2, height: 4 },
-            shadowOpacity: 0.2,
-            shadowRadius: 3,
-          }}
-        >
-          <Text
-            style={{
-              fontSize: 20,
-              color: color.blueOcean,
-              backgroundColor: color.keyllyGreen,
-              paddingVertical: 15,
-              borderRadius: 3,
-              marginVertical: 10,
-              textAlign: "center",
-            }}
-          >
-            WELCOME TO NDMC
+      <View style={styles.cardView}>
+        <View style={[styles.header, styles.boxShadow]}>
+          <Text style={styles.welcomeHeader}>WELCOME TO NDMC</Text>
+          <Text style={{ color: color.blueGray, fontSize: 15 }}>
+            .. CENTRALLY ARCHIVING HEALTH AND HEALTH RELATED DATA
           </Text>
-          <Text>.. CENTRALLY ARCHIVING HEALTH AND HEALTH RELATED DATA</Text>
         </View>
-      </ScrollView>
+      </View>
+      <ScrollView style={styles.cardView}></ScrollView>
     </View>
   );
 };
@@ -48,6 +23,33 @@ const AboutPage = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  header: {
+    marginVertical: 12,
+    borderRadius: 5,
+    padding: width * 0.05,
+  },
+  boxShadow: {
+    elevation: 2,
+    shadowColor: color.black,
+    shadowOffset: { width: 0, height: 0.5 * 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 0.8 * 2,
+  },
+  welcomeHeader: {
+    fontSize: 20,
+    color: color.blueOcean,
+    backgroundColor: color.keyllyGreen,
+    paddingVertical: 15,
+    borderRadius: 3,
+    marginVertical: 10,
+    textAlign: "center",
+    fontWeight: "bold",
+    letterSpacing: 2.5,
+  },
+  cardView: {
+    width: width * 0.98,
+    marginLeft: 0.01 * width,
   },
 });
 export default AboutPage;
