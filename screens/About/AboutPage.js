@@ -22,20 +22,7 @@ const AboutPage = () => {
         ]}
       >
         <View style={[styles.header, styles.boxShadow]}>
-          <Text
-            style={{
-              fontSize: 15,
-              color: color.greenGray,
-              marginBottom: 10,
-              fontWeight: "bold",
-              borderBottomWidth: 0.5,
-              textAlign: "center",
-              padding: 5,
-              letterSpacing: 2,
-            }}
-          >
-            DIRECTOR'S STATEMENT
-          </Text>
+          <Text style={styles.headingStyle}>DIRECTOR'S STATEMENT</Text>
           <Text
             style={{ fontSize: 15, color: color.blueOcean, marginBottom: 10 }}
           >
@@ -64,7 +51,50 @@ const AboutPage = () => {
           </Text>
         </View>
         <View style={[styles.header, styles.boxShadow]}>
-          <Text>teklej lklsdj jls jl lsjl jlksj aha ooi a hwf jajo ij</Text>
+          <Text style={styles.headingStyle}>OUR STRATEGIES</Text>
+          <Text
+            style={{ fontSize: 15, color: color.blueOcean, marginBottom: 10 }}
+          >
+            Multi-disciplinary teams of high caliber staffs are working at the
+            center to achieve the center’s five key strategies.
+          </Text>
+          <Text
+            style={{
+              color: color.blueGray,
+              lineHeight: 20,
+            }}
+          >
+            Strategy 1: Build research Capacity on data mining and big data
+            management for EPHI and partners (Capacity) Strategy 2: Establish
+            specific databases within NDMC, generate data and share, and improve
+            data availability and accessibility for local and international
+            users (Data)
+          </Text>
+          <Text
+            style={{ color: color.blueGray, lineHeight: 20, marginVertical: 5 }}
+          >
+            Strategy 2: Establish specific databases within NDMC, generate data
+            and share, and improve data availability and accessibility for local
+            and international users (Data)
+          </Text>
+          <Text
+            style={{ color: color.blueGray, lineHeight: 20, marginVertical: 5 }}
+          >
+            Strategy 3: Establish and strengthen local and international
+            collaboration (Collaboration)
+          </Text>
+          <Text
+            style={{ color: color.blueGray, lineHeight: 20, marginVertical: 5 }}
+          >
+            Strategy 4: Ensure local and international funding to undertake the
+            different health and health related researches (Funding)
+          </Text>
+          <Text
+            style={{ color: color.blueGray, lineHeight: 20, marginVertical: 5 }}
+          >
+            Strategy 5: Ensure utilization of population health evidence for
+            decision in the FMOH and key partners (Utilization)
+          </Text>
         </View>
       </ScrollView>
     </View>
@@ -102,6 +132,15 @@ const styles = StyleSheet.create({
     width: width * 0.98,
     marginLeft: 0.01 * width,
   },
-  scrollView: {},
+  headingStyle: {
+    fontSize: 15,
+    color: color.greenGray,
+    marginBottom: 10,
+    fontWeight: "bold",
+    borderBottomWidth: 0.5,
+    textAlign: "center",
+    padding: 5,
+    letterSpacing: 2,
+  },
 });
 export default AboutPage;
