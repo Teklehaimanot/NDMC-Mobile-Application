@@ -1,11 +1,4 @@
-import {
-  View,
-  Text,
-  StyleSheet,
-  Dimensions,
-  Pressable,
-  TouchableOpacity,
-} from "react-native";
+import { View, Text, StyleSheet, Dimensions, Image } from "react-native";
 import { color } from "../../utilities/Colors";
 import { ScrollView } from "react-native-gesture-handler";
 
@@ -109,6 +102,50 @@ const AboutPage = ({ navigation }) => {
             decision in the FMOH and key partners (Utilization)
           </Text>
         </View>
+        <View style={[styles.header, styles.boxShadow]}>
+          <Text style={styles.headingStyle}>PARTNERS AND COLLABORATORS</Text>
+          <View
+            style={{
+              flex: 1,
+              justifyContent: "space-around",
+              flexDirection: "row",
+              flexWrap: "wrap",
+            }}
+          >
+            <View style={[styles.partinership, styles.boxShadow]}>
+              <Image
+                style={styles.image}
+                source={{
+                  uri: "https://firebasestorage.googleapis.com/v0/b/ndmc-mobile-5a8b5.appspot.com/o/news%2Fnews1.jpg?alt=media&token=2d30273b-050b-4f2e-9ddf-934d13f234ac",
+                }}
+              />
+            </View>
+            <View style={[styles.partinership, styles.boxShadow]}>
+              <Image
+                style={styles.image}
+                source={{
+                  uri: "https://firebasestorage.googleapis.com/v0/b/ndmc-mobile-5a8b5.appspot.com/o/news%2Fnews1.jpg?alt=media&token=2d30273b-050b-4f2e-9ddf-934d13f234ac",
+                }}
+              />
+            </View>
+            <View style={[styles.partinership, styles.boxShadow]}>
+              <Image
+                style={styles.image}
+                source={{
+                  uri: "https://firebasestorage.googleapis.com/v0/b/ndmc-mobile-5a8b5.appspot.com/o/news%2Fnews1.jpg?alt=media&token=2d30273b-050b-4f2e-9ddf-934d13f234ac",
+                }}
+              />
+            </View>
+            <View style={[styles.partinership, styles.boxShadow]}>
+              <Image
+                style={styles.image}
+                source={{
+                  uri: "https://firebasestorage.googleapis.com/v0/b/ndmc-mobile-5a8b5.appspot.com/o/news%2Fnews1.jpg?alt=media&token=2d30273b-050b-4f2e-9ddf-934d13f234ac",
+                }}
+              />
+            </View>
+          </View>
+        </View>
       </ScrollView>
     </View>
   );
@@ -154,6 +191,15 @@ const styles = StyleSheet.create({
     textAlign: "center",
     padding: 5,
     letterSpacing: 2,
+  },
+  partinership: {
+    width: 0.4 * width,
+    marginVertical: 10,
+    height: 100,
+  },
+  image: {
+    width: "100%",
+    height: "100%",
   },
 });
 export default AboutPage;
