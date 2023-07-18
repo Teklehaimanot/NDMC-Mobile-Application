@@ -144,6 +144,22 @@ const AboutPage = ({ navigation }) => {
                 }}
               />
             </View>
+            <View style={[styles.partinership, styles.boxShadow]}>
+              <Image
+                style={styles.image}
+                source={{
+                  uri: "https://firebasestorage.googleapis.com/v0/b/ndmc-mobile-5a8b5.appspot.com/o/news%2Fnews1.jpg?alt=media&token=2d30273b-050b-4f2e-9ddf-934d13f234ac",
+                }}
+              />
+            </View>
+            <View style={[styles.partinership, styles.boxShadow]}>
+              <Image
+                style={styles.image}
+                source={{
+                  uri: "https://firebasestorage.googleapis.com/v0/b/ndmc-mobile-5a8b5.appspot.com/o/news%2Fnews1.jpg?alt=media&token=2d30273b-050b-4f2e-9ddf-934d13f234ac",
+                }}
+              />
+            </View>
           </View>
         </View>
       </ScrollView>
@@ -196,10 +212,13 @@ const styles = StyleSheet.create({
     width: 0.4 * width,
     marginVertical: 10,
     height: 100,
+    borderRadius: 5,
+    borderWidth: 0.5,
   },
   image: {
     width: "100%",
     height: "100%",
+    borderRadius: 5,
   },
 });
 export default AboutPage;
