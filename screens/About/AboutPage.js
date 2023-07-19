@@ -177,8 +177,9 @@ const styles = StyleSheet.create({
     padding: width * 0.05,
   },
   boxShadow: {
-    elevation: 2,
-    shadowColor: color.black,
+    borderRadius: 0.4,
+    elevation: 1,
+    shadowColor: color.greenGray,
     shadowOffset: { width: 0, height: 0.5 * 2 },
     shadowOpacity: 0.3,
     shadowRadius: 0.8 * 2,
