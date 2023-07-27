@@ -109,13 +109,12 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   image: {
-    width: width * 0.8,
+    width: width * 0.9,
     height: width * 0.5,
     marginVertical: width * 0.08,
-    marginHorizontal: width * 0.1,
+    marginHorizontal: width * 0.05,
     borderRadius: 5,
-
-    // marginHorizontal: 15,
+    resizeMode: "contain",
   },
 });
 

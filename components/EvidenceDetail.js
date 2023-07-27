@@ -108,6 +108,7 @@ const styles = StyleSheet.create({
   image: {
     width: width * 1,
     height: 300,
+    resizeMode: "contain",
   },
   button: {
     alignItems: "center",
