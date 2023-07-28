@@ -10,7 +10,7 @@ const AboutPage = ({ navigation }) => {
       <View style={styles.cardView}>
         <View style={[styles.header, styles.boxShadow]}>
           <Text style={styles.welcomeHeader}>WELCOME TO NDMC</Text>
-          <Text style={{ color: color.blueGray, fontSize: 15 }}>
+          <Text style={{ color: color.greenGray, fontSize: 15 }}>
             .. CENTRALLY ARCHIVING HEALTH AND HEALTH RELATED DATA
           </Text>
         </View>
