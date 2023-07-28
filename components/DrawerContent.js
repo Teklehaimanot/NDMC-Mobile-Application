@@ -17,8 +17,9 @@ import { color } from "../utilities/Colors";
 
 const CustomSidebarMenu = (props) => {
   const BASE_PATH =
-    "https://raw.githubusercontent.com/AboutReact/sampleresource/master/";
-  const proileImage = "react_logo.png";
+    "https://firebasestorage.googleapis.com/v0/b/ndmc-mobile-5a8b5.appspot.com/o/profileImage";
+  const proileImage =
+    "%2Flogo.png?alt=media&token=b9db2afd-6b47-4809-922e-b5bd8e2a68a1";
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: color.gray }}>

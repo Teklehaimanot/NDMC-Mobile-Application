@@ -1,13 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { View, Text } from "react-native";
-
-function Reports({ navigation, route }) {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>NDMC Report</Text>
-    </View>
-  );
-}
+import Reports from "../screens/Reports/Reports";
 
 const Stack = createNativeStackNavigator();
 const ReportScreenNavigator = () => {
