@@ -18,7 +18,6 @@ const EvidenceDetail = ({ route }) => {
     route.params;
 
   handleDownload = async () => {
-    const filename = filename;
     try {
       const result = await FileSystem.downloadAsync(
         attachedUrl,
